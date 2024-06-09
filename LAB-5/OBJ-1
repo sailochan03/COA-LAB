@@ -1,0 +1,23 @@
+// Find the smallest or largest in an array
+.global_start
+_start:
+    ldr r0,count
+    ldr rl,=list
+    ldr r2, [r0]
+    sub r2, r2, #1
+    ldr r3, [rl],#4
+loop:ldr r4, [rl]
+    cmp r3,r4
+    blt ford
+    ldr r3, [rl]
+ford: add r1,rl,#4
+    adds r2, r2,#-1
+    bne loop
+    ldr r4,=res
+    str r3, [r4]
+    mov r7,#1
+    swi 0
+.data
+count: .word 5
+res: word
+list: .word 56, 23, 76, 8, 9
