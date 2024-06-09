@@ -1,0 +1,8 @@
+// Gray code of 8-bit number
+
+mov al, 38h
+mov cl, al
+shr cl, 1
+xor al, cl
+mov [500h], al
+ret
