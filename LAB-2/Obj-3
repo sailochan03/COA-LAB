@@ -1,0 +1,12 @@
+// Move a block of 16-bit data from one location to another
+
+mov cl,5
+mov si, 300h
+mov di, 350h
+back: mov ax, [si]
+mov [di],ax
+add si,2
+add di,2
+dec cl
+jnz back
+ret
