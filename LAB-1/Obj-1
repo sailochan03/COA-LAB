@@ -1,0 +1,21 @@
+// Addition, subtraction, multiplication, division in 8086 
+
+org 100h 
+mov bx,0032h
+mov cx,0010h
+mov ax,bx
+add ax,cx
+mοv [1000h],ax
+mov ax,bx
+sub ax,cx
+mov [1002h],ax
+mov ax,bx
+mul cx
+mοv [1004h],ax
+mov [1006hl,dx
+mov ax,bx
+cwd
+div cx
+mov [1008h],ax
+mοv [10ah],dx
+hlt
