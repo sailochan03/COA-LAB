@@ -1,0 +1,31 @@
+// Find largest number(8-bit) in an array of size N
+
+data segment
+counter db 5
+arr db 30h, 10h, 05h, 02h, 27h
+data ends
+code segment
+assume cs:code, ds: data
+start:
+mov ax, data
+mov ds, ax
+lea bx, counter
+mov cl, [bx]
+dec cl
+top: lea si, arr
+mov ch, cl
+back: mov al, [si]
+inc si
+cmp al, [si]
+jc ford
+mov dl, [si]
+mov [si], al
+dec si
+mov [si], dl
+inc si
+ford: dec ch
+jnz back
+dec cl
+jnz top
+code ends
+end start
