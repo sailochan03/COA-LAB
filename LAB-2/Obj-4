@@ -1,0 +1,14 @@
+// Multiplication without using mul instruction
+
+mov bx, 300h
+mov cl,8
+mov dl,0
+mov al, [bx]
+back: shl al, 1
+jc ford
+inc dl
+ford: dec cl
+jnz back
+inc bx
+mov [bx], dl
+ret
