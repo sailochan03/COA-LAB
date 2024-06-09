@@ -1,0 +1,10 @@
+// Addition, subtraction and multiplication in ARM
+
+.global_start
+_start:
+    mov r0, #0x40
+    mov r1, #0x50
+    add r2, r0, r1
+    sub r3, r1, r0
+    mul r4, r0, r1
+my_exit: b my_exit
