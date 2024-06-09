@@ -1,0 +1,7 @@
+// 2's complement of a number 
+
+mov al, 38h
+not al
+inc al
+mov [500h], al
+ret
