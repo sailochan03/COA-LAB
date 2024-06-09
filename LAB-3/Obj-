@@ -1,0 +1,26 @@
+// Find the smallest number in the array
+
+data segment
+arr db 30h, 10h, 02h, 05h, 27h
+counter db 5
+res db 0
+data ends
+code segment
+assume cs: code, ds: data
+start: mov ax, data
+mov ds, ax
+lea si, arr
+lea bx, counter
+lea di, res
+mov cl, [bx]
+dec cl
+mov al, [si]
+back: inc si
+cmp al, [si]
+jc ford
+mov al, [si]
+ford: dec cl
+jnz back
+mov [di], al
+code ends
+end start
