@@ -1,0 +1,19 @@
+// Find the sum and average of N 16 bit numbers
+
+org 100h
+mov si,500h
+mov cx,0005h
+mov bx,cx
+mov ax,0000h
+mov dx,0000h
+back: add ax, [si]
+jnc ford
+inc dx
+ford: add si, 02h
+dec cx
+jnz back
+Μου [550h],ax
+Μου [552h],dx
+div bx
+που [554h],ax
+ret
