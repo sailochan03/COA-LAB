@@ -1,0 +1,15 @@
+// Count no. of 0s in 8-bit number
+
+mov ax, 1000h
+mov ds, ax
+mov bx, [300h]
+mov ax,0
+mov dx,0
+back: add ax, [302h]
+jnc ford
+inc dx
+ford: dec bx
+jnz back
+mov [304h], ax
+mov [306h], dx
+ret
