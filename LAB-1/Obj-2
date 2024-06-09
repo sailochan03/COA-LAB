@@ -1,0 +1,20 @@
+// 1.Swap of nibble of data
+// 2.xor of 2 numbers 
+
+org 100h
+mov si,1000h
+mov bl, [si]
+mov dl, [si+01h]
+mov al,bl
+mov cl,04h
+rol al,cl
+που [si+02hl,al
+mov al,bl
+and al,dl
+
+// xor part
+mov ah,dl
+xor ah,bl
+or al,bl
+mov [si+03h],al
+hlt
