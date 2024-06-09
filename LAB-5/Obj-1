@@ -1,8 +1,9 @@
 // Find the smallest or largest in an array
+
 .global_start
 _start:
-    ldr r0,count
-    ldr rl,=list
+    ldr r0, =count
+    ldr rl, =list
     ldr r2, [r0]
     sub r2, r2, #1
     ldr r3, [rl],#4
@@ -19,5 +20,5 @@ ford: add r1,rl,#4
     swi 0
 .data
 count: .word 5
-res: word
 list: .word 56, 23, 76, 8, 9
+res: .word 0
