@@ -2,7 +2,7 @@
 
 .global_start
 _start:
-    ldr ro, =list
+    ldr r0, =list
     ldr r1, =oddlist
     ldr r2, =evenlist
     ldr r3, =count
